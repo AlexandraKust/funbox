@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Funbox</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="wrap">
+		<section class="catalog">
+			<div class="container">
+				<h2 class="catalog__title">Ты сегодня покормил кота?</h2>
+				<div class="catalog__row">
+					<div class="catalog__item">
+						<a href="#" class="catalog__card card-catalog">
+							<div class="card-catalog__border">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+									width="320" height="480">
+									<defs>
+										<clipPath id="cp1">
+											<polygon points="45,0 320,0 320,480 0,480 0,48" />
+										</clipPath>
+									</defs>
+									<g stroke-width="4" class="card-catalog__border-fill">
+										<rect x="2" y="2" rx="14" clip-path="url(#cp1)" width="316" height="476"
+											class="card-catalog__body-fill" fill="none" />
+										<line x1="2" y1="48" x2="45" y2="2" />
+									</g>
+								</svg>
+							</div>
+							<p class="card-catalog__descr">
+								Сказочное заморское яство
+							</p>
+							<h3 class="card-catalog__title">Нямушка</h3>
+							<p class="card-catalog__taste">с фуа-гра</p>
+							<p class="card-catalog__content"><b>10</b> порций</p>
+							<p class="card-catalog__content">мышь в подарок</p>
+							<div class="card-catalog__weight"><span>0,5</span> кг</div>
+							<div class="card-catalog__animal">
+								<img src="media/img/cat.png" alt="кот">
+							</div>
+						</a>
+						<p class="catalog__descr">
+							<span class="catalog__descr-default">Чего сидишь? Порадуй котэ, <a href="#"
+									class="catalog__link">купи.</a></span>
+							<span class="catalog__descr-selected">Печень утки разварная с артишоками.</span>
+							<span class="catalog__descr-disabled">Печалька, с фуа-гра закончился.</span>
+						</p>
+					</div>
+					<div class="catalog__item">
+						<a href="#" class="catalog__card card-catalog">
+							<div class="card-catalog__border">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+									width="320" height="480">
+									<defs>
+										<clipPath id="cp2">
+											<polygon points="45,0 320,0 320,480 0,480 0,48" />
+										</clipPath>
+									</defs>
+									<g stroke-width="4" class="card-catalog__border-fill">
+										<rect x="2" y="2" rx="14" clip-path="url(#cp2)" width="316" height="476"
+											class="card-catalog__body-fill" fill="none" />
+										<line x1="2" y1="48" x2="45" y2="2" />
+									</g>
+								</svg>
+							</div>
+							<p class="card-catalog__descr">Сказочное заморское яство</p>
+							<h3 class="card-catalog__title">Нямушка</h3>
+							<p class="card-catalog__taste">с рыбой</p>
+							<p class="card-catalog__content"><b>40</b> порций</p>
+							<p class="card-catalog__content"><b>2</b> мыши в подарок</p>
+							<div class="card-catalog__weight"><span>2</span> кг</div>
+							<div class="card-catalog__animal">
+								<img src="media/img/cat.png" alt="кот">
+							</div>
+						</a>
+						<p class="catalog__descr">
+							<span class="catalog__descr-default">Чего сидишь? Порадуй котэ, <a href="#"
+									class="catalog__link">купи.</a></span>
+							<span class="catalog__descr-selected">Головы щучьи с чесноком да свежайшая сёмгушка.</span>
+							<span class="catalog__descr-disabled">Печалька, с рыбой закончился.</span>
+						</p>
+					</div>
+					<!-- неактивная карточка. Класс disabled -->
+					<div class="catalog__item disabled">
+						<a href="#" class="catalog__card card-catalog">
+							<div class="card-catalog__border">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+									width="320" height="480">
+									<defs>
+										<clipPath id="cp3">
+											<polygon points="45,0 320,0 320,480 0,480 0,48" />
+										</clipPath>
+									</defs>
+									<g stroke-width="4" class="card-catalog__border-fill">
+										<rect x="2" y="2" rx="14" clip-path="url(#cp3)" width="316" height="476"
+											class="card-catalog__body-fill" fill="none" />
+										<line x1="2" y1="48" x2="45" y2="2" />
+									</g>
+								</svg>
+							</div>
+							<p class="card-catalog__descr">Сказочное заморское яство</p>
+							<h3 class="card-catalog__title">Нямушка</h3>
+							<p class="card-catalog__taste">с курой</p>
+							<p class="card-catalog__content"><b>100</b> порций</p>
+							<p class="card-catalog__content"><b>5</b> мышей в подарок</p>
+							<p class="card-catalog__content">заказчик доволен</p>
+							<div class="card-catalog__weight"><span>5</span> кг</div>
+							<div class="card-catalog__animal">
+								<img src="media/img/cat.png" alt="кот">
+							</div>
+						</a>
+						<p class="catalog__descr">
+							<span class="catalog__descr-default">Чего сидишь? Порадуй котэ, <a href="#"
+									class="catalog__link">купи.</a></span>
+							<span class="catalog__descr-selected">Филе из цыплят с трюфелями в бульоне.</span>
+							<span class="catalog__descr-disabled">Печалька, с курой закончился.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

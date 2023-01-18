@@ -1,0 +1,247 @@
+// обнуляющие стили
+@import "nullstyle";
+
+/* шрифт */ 
+@font-face {
+	font-family: 'Exo 2.0';
+	src: url('../fonts/Exo20-Thin.woff2') format('woff2'),
+		 url('../fonts/Exo20-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Trebuchet MS';
+	src: url('../fonts/TrebuchetMS.woff2') format('woff2'),
+		 url('../fonts/TrebuchetMS.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Trebuchet MS';
+	src: url('../fonts/TrebuchetMS-Bold.woff2') format('woff2'),
+		 url('../fonts/TrebuchetMS-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+// описание стилей
+body {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+.wrap {
+	min-height: 100vh;
+  	overflow: hidden;
+}
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+	flex: 1 1 auto;
+}
+
+.catalog {
+	background: url('../media/img/Pattern.png') 0 0 / cover no-repeat;
+	width: 100%;
+	min-height: 100vh;
+	overflow-y: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__title {
+		font-family: 'Exo 2.0';
+		font-size: 36px;
+		line-height: 44px;
+		text-align: center;		
+		color: #fff;
+		text-shadow: 0px 1px 1px #000;
+		margin-bottom: 24px;
+	}
+
+	&__row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	//стиль выбранной карточки 
+	&__item.selected {
+		.card-catalog__border-fill {
+			stroke: #D91667;
+		}
+		.card-catalog__weight {
+			background: #D91667;
+		}
+	}
+	// стиль недоступной карточки 
+	&__item.disabled {
+		.card-catalog__border-fill {
+			stroke: #B3B3B3;
+		}
+		.card-catalog__weight {
+			background: #B3B3B3;
+		}
+		.card-catalog__border-fill {
+			fill: #F2F2F2;
+		}
+		.card-catalog__descr, .card-catalog__title, 
+		.card-catalog__taste, .card-catalog__content {
+			color: #B3B3B3;
+		}
+		.card-catalog__animal {
+			opacity: 0.5;
+		}
+		.catalog__descr {
+			color: #FFFF66;
+		}
+	}
+
+	&__descr {
+		font-family: 'Trebuchet MS';
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 15px;		
+		color: #fff;
+		span {
+			display: none;
+		}
+	}
+	&__link {
+		font-family: 'Trebuchet MS';
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 15px;		
+		color: #1698D9;
+		position: relative;
+		&::after {
+			content: "";
+			width: calc(100% - 5px);
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-bottom: 1px dashed #1698D9;
+		}
+	}
+
+	@media (max-width: 991px) {
+		&__row {
+			flex-wrap: wrap;
+			justify-content: center;
+			column-gap: 80px;
+			row-gap: 50px;
+		}
+		
+	}
+	@media 
+	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-resolution: 1.5dppx),
+	only screen and (min-resolution: 144dpi) {
+		background: url('../media/img/Pattern@2x.png') 0 0 / cover no-repeat;
+	}
+}
+
+.card-catalog {
+	position: relative;
+	z-index: 5;
+	overflow: hidden;
+	width: 320px;
+	height: 480px;
+	margin-bottom: 14px;
+	padding: 21px 48px;
+	font-family: 'Trebuchet MS';
+	
+	&__border {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	&__border-fill {
+		stroke: #1698D9;
+	}
+	&__body-fill {
+		fill: #ffffff;
+	}
+	&__descr {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		color: #666666;
+		margin-bottom: 5px;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 48px;
+		line-height: 56px;
+		color: #000;
+	}
+
+	&__taste {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 28px;
+		color: #000;
+		margin-top: -3px;
+		margin-bottom: 15px;
+		
+	}
+
+	&__content {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		color: #666666;
+		b {font-weight: 700;}
+	}
+
+	&__weight {
+		position: absolute;
+		right: 16px;
+		bottom: 16px;
+		z-index: 5;
+		width: 80px;
+		height: 80px;
+		background: #1698D9;
+		border-radius: 50%;
+		padding-top: 20px;
+		padding-bottom: 8px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		color: #fff;
+		font-weight: 400;
+		font-size: 21px;
+		line-height: 22px;
+
+		span {
+			font-size: 42px;
+			line-height: 22px;
+		}
+	}
+
+	&__animal {
+		position: absolute;
+		left: 4px;
+		bottom: 4px;
+		z-index: 0;
+		border-radius: 12px;
+		overflow: hidden;
+	}
+}

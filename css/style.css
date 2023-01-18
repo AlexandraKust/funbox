@@ -1,0 +1,358 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* шрифт */
+@font-face {
+  font-family: 'Exo 2.0';
+  src: url("../fonts/Exo20-Thin.woff2") format("woff2"), url("../fonts/Exo20-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url("../fonts/TrebuchetMS.woff2") format("woff2"), url("../fonts/TrebuchetMS.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url("../fonts/TrebuchetMS-Bold.woff2") format("woff2"), url("../fonts/TrebuchetMS-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.wrap {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.catalog {
+  background: url("../media/img/Pattern.png") 0 0/cover no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.catalog__title {
+  font-family: 'Exo 2.0';
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 1px 1px #000;
+  margin-bottom: 24px;
+}
+
+.catalog__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.catalog__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.catalog__item.selected .card-catalog__border-fill {
+  stroke: #D91667;
+}
+
+.catalog__item.selected .card-catalog__weight {
+  background: #D91667;
+}
+
+.catalog__item.disabled .card-catalog__border-fill {
+  stroke: #B3B3B3;
+}
+
+.catalog__item.disabled .card-catalog__weight {
+  background: #B3B3B3;
+}
+
+.catalog__item.disabled .card-catalog__border-fill {
+  fill: #F2F2F2;
+}
+
+.catalog__item.disabled .card-catalog__descr, .catalog__item.disabled .card-catalog__title,
+.catalog__item.disabled .card-catalog__taste, .catalog__item.disabled .card-catalog__content {
+  color: #B3B3B3;
+}
+
+.catalog__item.disabled .card-catalog__animal {
+  opacity: 0.5;
+}
+
+.catalog__item.disabled .catalog__descr {
+  color: #FFFF66;
+}
+
+.catalog__descr {
+  font-family: 'Trebuchet MS';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #fff;
+}
+
+.catalog__descr span {
+  display: none;
+}
+
+.catalog__link {
+  font-family: 'Trebuchet MS';
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  color: #1698D9;
+  position: relative;
+}
+
+.catalog__link::after {
+  content: "";
+  width: calc(100% - 5px);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dashed #1698D9;
+}
+
+@media (max-width: 991px) {
+  .catalog__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 80px;
+            column-gap: 80px;
+    row-gap: 50px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
+  .catalog {
+    background: url("../media/img/Pattern@2x.png") 0 0/cover no-repeat;
+  }
+}
+
+.card-catalog {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  width: 320px;
+  height: 480px;
+  margin-bottom: 14px;
+  padding: 21px 48px;
+  font-family: 'Trebuchet MS';
+}
+
+.card-catalog__border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.card-catalog__border-fill {
+  stroke: #1698D9;
+}
+
+.card-catalog__body-fill {
+  fill: #ffffff;
+}
+
+.card-catalog__descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #666666;
+  margin-bottom: 5px;
+}
+
+.card-catalog__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000;
+}
+
+.card-catalog__taste {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000;
+  margin-top: -3px;
+  margin-bottom: 15px;
+}
+
+.card-catalog__content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.card-catalog__content b {
+  font-weight: 700;
+}
+
+.card-catalog__weight {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 5;
+  width: 80px;
+  height: 80px;
+  background: #1698D9;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 22px;
+}
+
+.card-catalog__weight span {
+  font-size: 42px;
+  line-height: 22px;
+}
+
+.card-catalog__animal {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  z-index: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
